@@ -16,13 +16,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee save(Employee employee) {
-
         return employeeRepository.save(employee);
     }
 
     @Override
     public Optional<Employee> findById(Long id) {
-
         return employeeRepository.findById(id);
     }
 
