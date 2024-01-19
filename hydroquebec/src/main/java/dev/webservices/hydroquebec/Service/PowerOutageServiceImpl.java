@@ -28,12 +28,14 @@ public class PowerOutageServiceImpl implements PowerOutageService {
 
     @Override
     public void update(Long id) {
-
+        Optional<PowerOutage> powerOutage = powerOutageRepository.findById(id);
+        powerOutage.ifPresent(value -> powerOutageRepository.save(value));
     }
 
     @Override
     public void delete(Long id) {
-
+        Optional<PowerOutage> powerOutage = powerOutageRepository.findById(id);
+        powerOutage.ifPresent(value -> powerOutageRepository.delete(value));
     }
 
 }

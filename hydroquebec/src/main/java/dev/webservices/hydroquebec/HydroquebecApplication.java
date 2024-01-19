@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 @SpringBootApplication
 @EntityScan(basePackages = {
 		"dev.webservices.addresses.Entity",
-		"dev.webservices.employeelib.Entity"
+		"dev.webservices.employeelib.Entity",
+		"dev.webservices.hydroquebec.Entity"
 })
 @EnableAutoConfiguration
 public class HydroquebecApplication {
