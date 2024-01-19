@@ -17,6 +17,12 @@ public class AddressServiceImpl implements AddressService {
 
     @Override
     public Address save(Address address) {
+
+        // check if the given address already registered
+        Optional<Address> existingAddress = addressRepository.findById(address.getId());
+        if (existingAddress.isPresent()) {
+            address.setId(existingAddress.get().getId());
+        }
         return addressRepository.save(address);
     }
 

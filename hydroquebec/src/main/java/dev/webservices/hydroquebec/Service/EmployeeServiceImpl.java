@@ -33,7 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void delete(Long id) {
         Optional<Employee> employee = employeeRepository.findById(id);
-        employee.ifPresent(value -> employeeRepository.save(value));
+        employee.ifPresent(value -> employeeRepository.delete(value));
     }
 
 }
